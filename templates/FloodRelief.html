@@ -24,11 +24,14 @@
             data: $('form').serialize(),
             type: 'POST',
             success: function(response) {
+            console.log('ok');
             var out=$.parseJSON(response);
+            console.log(out);
             var ind=out.id;
                 var keys = [];
                 for(var k in ind)
                     keys.push(k);
+                console.log('keys'+keys);
 
                 if(keys.length!=0){
 
@@ -36,19 +39,20 @@
                  var rangeObj = new Range();
                 rangeObj.selectNodeContents(pa);
                  rangeObj.deleteContents();
-
-                for(var id in keys){
-
+                console.log(out.name["3"]);
+                for(var id2=0;id2<keys.length;id2=id2+1 ){
+                    console.log(keys[id2]);
+                    console.log(keys);
                     pa.appendChild(document.createElement('br'));
 
                     var div=document.createElement("div");// id="+id+"class='oot'style='background:#dde0db;width:25%;height:20%;border: 2px solid #d4dbdb;border-radius: 7px;'" )
-                    div.setAttribute("id",id);
+                    div.setAttribute("id",keys[id2]);
                     div.setAttribute("class","oot");
                     div.setAttribute("style","background:#dde0db;width:25%;height:20%;border: 2px solid #d4dbdb;border-radius: 7px;");
 
-                    div.appendChild(document.createTextNode('Name:'+out.name[id]));div.appendChild(document.createElement('br'));
-                    div.appendChild(document.createTextNode(' Address:'+out.address[id]));div.appendChild(document.createElement('br'));
-                    div.appendChild(document.createTextNode(' Camp:'+out.camp[id]+'\n'));
+                    div.appendChild(document.createTextNode('Name:'+out.name[keys[id2]]));div.appendChild(document.createElement('br'));
+                    div.appendChild(document.createTextNode(' Address:'+out.address[keys[id2]]));div.appendChild(document.createElement('br'));
+                    div.appendChild(document.createTextNode(' Camp:'+out.camp[keys[id2]]+'\n'));
 
                     pa.appendChild(div);
 
