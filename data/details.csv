@@ -1,3 +1,4 @@
-id	name	address	camp
-0	Akash	xyz,kollam	wxy,kollam
-1	Akash	nmmm,kollam	kkpp,kollam
+id	name	address	camp	gend
+
+0	Akash	kollam	kollam	Male
+0	Akash	kollam	xxy,kollam	Male

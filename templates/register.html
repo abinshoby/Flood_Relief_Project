@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flood relief</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body align="center">
+
+<h1>REGISTER BY ENTERING CORRECT DETAILS</h1>
+
+
+
+<hr><p>
+
+<form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+    <strong>First Name</strong><br>
+    <input type="text" size="20" name="input1" value=""><p>
+
+    <strong>Gender</strong><br>
+    <input type="radio" name="radio" value="Male" checked> Male
+    <input type="radio" name="radio" value="Female"> Female<p>
+<strong>Camp location</strong><br>
+    <input type="text" size="20" name="input2" value=""><p>
+<strong>Residential address</strong><br>
+    <input type="text" size="20" name="input3" value=""><p>
+   
+  
+
+
+    <strong>Any message</strong><br>
+    <textarea rows="4" cols="40" name="textarea"></textarea><p>
+
+
+ 
+
+    <fieldset id="progress" style="display: none">
+        <legend>Files Progress</legend>
+
+        <div class="progress-trough">
+            <div id="progress-bar" class="progress-bar">0%</div>
+        </div>
+    </fieldset><p>
+
+    <input type="submit" value="Upload!" id="upload-button">
+
+</form>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/uploadr.js') }}"></script>
+
+</body>
+</html>
