@@ -26,12 +26,12 @@
             success: function(response) {
             console.log('ok');
             var out=$.parseJSON(response);
-            console.log(out);
+            //console.log(out);
             var ind=out.id;
                 var keys = [];
                 for(var k in ind)
                     keys.push(k);
-                console.log('keys'+keys);
+                //console.log('keys'+keys);
 
                 if(keys.length!=0){
 
@@ -39,10 +39,10 @@
                  var rangeObj = new Range();
                 rangeObj.selectNodeContents(pa);
                  rangeObj.deleteContents();
-                console.log(out.name["3"]);
+                //console.log(out.name["3"]);
                 for(var id2=0;id2<keys.length;id2=id2+1 ){
-                    console.log(keys[id2]);
-                    console.log(keys);
+                    //console.log(keys[id2]);
+                    //console.log(keys);
                     pa.appendChild(document.createElement('br'));
 
                     var div=document.createElement("div");// id="+id+"class='oot'style='background:#dde0db;width:25%;height:20%;border: 2px solid #d4dbdb;border-radius: 7px;'" )
@@ -103,7 +103,7 @@ cursor: pointer;
      <div class="container" align="center">
 
          <form  action="/" method="post" role="form">
-             <h2 style="color:#659ba0;">Flood Relief </h2>
+             <h2 style="color:#659ba0;">Search </h2>
              <input id="inp" name="inp" align="center"style="width:500px ;height:30px;" class="form-control" autocomplete="off" placeholder="Type the name of the person" required autofocus>
             <button id="sub" class="button" style="background:#dde0db;border: 2px solid #d4dbdb;border-radius: 7px;width:45px;height:40px;outline:none;">find</button>
 

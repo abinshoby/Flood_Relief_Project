@@ -2,27 +2,35 @@
 <html>
 <head>
 <title>Flood relief</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body align="center">
 
-<h1>REGISTER BY ENTERING CORRECT DETAILS</h1>
+<h1 style="color:#659ba0;">REGISTRATION</h1>
+<h2 style="">All Fields marked '*' are compulsary</h2>
 
+<style>
+     .button:hover {
 
+    color: white;
+     box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+     cursor: pointer;
+}
+</style>
 
 <hr><p>
 
 <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
     <strong>First Name</strong><br>
-    <input type="text" size="20" name="input1" value=""><p>
+    <input required type="text" size="20" name="input1" class="form-control" value=""><p>
 
     <strong>Gender</strong><br>
     <input type="radio" name="radio" value="Male" checked> Male
     <input type="radio" name="radio" value="Female"> Female<p>
 <strong>Camp location</strong><br>
-    <input type="text" size="20" name="input2" value=""><p>
+    <input required type="text" size="20" name="input2" value=""><p>
 <strong>Residential address</strong><br>
-    <input type="text" size="20" name="input3" value=""><p>
+    <input required type="text" size="20" name="input3" value=""><p>
    
   
 
@@ -41,8 +49,8 @@
         </div>
     </fieldset><p>
 
-    <input type="submit" value="Upload!" id="upload-button">
-
+    <input class='button' type="submit" value="Upload!" id="upload-button" style="background:#dde0db;border: 2px solid #d4dbdb;border-radius: 7px;width:60px;height:40px;outline:none;">
+</p>
 </form>
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
