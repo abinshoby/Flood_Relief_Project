@@ -7,7 +7,7 @@
 <body align="center">
 
 <h1 style="color:#659ba0;">REGISTRATION</h1>
-<h2 style="">All Fields marked '*' are compulsary</h2>
+
 
 <style>
      .button:hover {
@@ -19,17 +19,18 @@
 </style>
 
 <hr><p>
+    <h5 style="color:red;">All Fields marked '*' are compulsary</h5>
 
 <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
-    <strong>First Name</strong><br>
+    <strong>First Name </strong><strong style="color:red;"> *</strong><br>
     <input required type="text" size="20" name="input1" class="form-control" value=""><p>
 
-    <strong>Gender</strong><br>
+    <strong>Gender</strong><strong style="color:red;"> *</strong><br>
     <input type="radio" name="radio" value="Male" checked> Male
     <input type="radio" name="radio" value="Female"> Female<p>
-<strong>Camp location</strong><br>
+<strong>Camp location</strong><strong style="color:red;"> *</strong><br>
     <input required type="text" size="20" name="input2" value=""><p>
-<strong>Residential address</strong><br>
+    <strong>Residential address</strong><strong style="color:red;"> *</strong><br>
     <input required type="text" size="20" name="input3" value=""><p>
    
   
