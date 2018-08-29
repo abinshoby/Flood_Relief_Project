@@ -11,7 +11,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def first():
-    return render_template('FloodRelief.html')#predict.html
+    return render_template('main.html')#predict.html
+@app.route('/search')
+def sear():
+    return render_template('search.html')
+
 @app.route('/req1', methods=['POST'])
 def req1():
     inp =  request.form['inp'];
@@ -62,7 +66,7 @@ def upload():
 @app.route('/upload')
 def upload_complete():
     return render_template(
-        'FloodRelief.html')  # abin shoby change your search python code so that it ll able to search for the input name and return
+        'main.html')  # abin shoby change your search python code so that it ll able to search for the input name and return
 
 
 if __name__ == '__main__':
