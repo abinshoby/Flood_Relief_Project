@@ -57,7 +57,8 @@ def upload():
     for key, value in list(form.items()):
         details.append(value)
     f = open("../data/details.csv", "a")
-    f.write("\n0\t" + details[0].strip()   + "\t" + details[3].strip()+ "\t" + details[2].strip() + "\t" + details[1].strip())#additional message removed
+    #print(details[3].replace('\r',"").replace('\n',","))
+    f.write("\n0\t" + details[0].strip()   + "\t" + details[3].strip().replace('\r',"").replace('\n',",")+ "\t" + details[2].strip().replace('\r',"").replace('\n',",") + "\t" + details[1].strip())#additional message removed
     f.close()
 
     return redirect(url_for("upload"))
