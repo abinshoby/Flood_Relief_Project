@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flood Relief</title>
-</head>
-<body>
-<a href="{{ url_for('sear', filename='search.html') }}">Search</a>
-<a href="{{ url_for('second', filename='register.html') }}">Register</a>
-<a href="{{ url_for('reqt', filename='require.html') }}">Submit Requirements</a>
-</body>
-</html>
+
+<html>
+
+
+    <head>
+    
+        <title>Kerala Flood Relief</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="description" content="Simple, clean, responsive website built with html5, CSS3, Js, jQuery and Bootstrap">
+        
+        <meta name="keywords" content="keralaflood relief">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        
+         <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:500italic,600italic,600,700,700italic,300italic,300,400,400italic,800,900' rel='stylesheet' type='text/css'>
+        
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600italic,700,900' rel='stylesheet' type='text/css'>
+      
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+        
+        <!-- Fontawesome  -->
+        <link rel="stylesheet" href="static/font-awesome.min.css">
+        
+        <!--  CSS -->
+        
+        <link rel="stylesheet" type="text/css" href="static/style1.css">
+     
+        
+      
+        
+       
+       
+    
+	 </head>
+	 <body>
+    
+       
+		   <section id="larry" style="background-image: url(tcof.jpg);margin-top:0px;">
+	      <div class="container">
+		    <div class="row">
+                <center>    
+			<a class="btn btn-download btn-lg" href="{{ url_for('second', filename='register.html') }}" role="button" data-toggle="modal" style="margin-right:20px;margin-bottom:20px;margin-top:10px;">Registration</a>
+            <a class="btn btn-success btn-lg" href="{{ url_for('sear', filename='search.html') }}" role="button" data-toggle="modal" style="margin-right:20px;margin-bottom:20px;margin-top:10px;">Search Your Relatives</a>
+            <a class="btn btn-download btn-lg" href="{{ url_for('reqt', filename='require.html') }}" role="button" data-toggle="modal" style="margin-right:20px;margin-bottom:20px;margin-top:10px;">Needs and Requirements</a>
+                </center>
+                    </div>
+              </div>
+    
+	</section>
+		   <section class="header--type2 " data-background="team.jpg"  data-height="45%" style="background-image: url(static/tcof.jpg);padding-bottom:550px;" >
+   
+</section>
+
+
+
+ <!-- Footer -->
+        <footer class="footer">
+        
+            <div class="container">
+            
+                <div class="row">
+                
+                    <div class="col-md-6">
+                    
+                        <div id="copyright">
+                            <p>POWERED BY<a href="#"> - TKMCE DEVELOPERS</a></p>
+                        </div>
+                    </div>
+                    
+                
+                
+                </div>
+            
+            </div>
+        
+        
+        </footer>
+
+
+		   </body>
+		   </html>

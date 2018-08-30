@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+p {
+    
+    font-size: 14px;
+}
+.active{
+	color:#129CF3;
+}
+
+[data-background] {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.btn-download,
+.btn-download:focus,
+.btn-download:active,
+.btn-download:visited
+{
+    
+    
+    border-color: #129CF3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 19px;
+    text-transform: uppercase;
+    border-radius: 3px;
+      background-color: #129CF3;
+    color: #fff;   
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+     -o-transition: all 1s;
+}
+.btn-success,
+.btn-success:focus,
+.btn-success:active,
+.btn-success:visited
+{
+ padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 19px;
+    text-transform: uppercase;
+    border-radius: 3px;
+ }
+.btn-download:hover {
+    background-color: #129CF3;
+    color: #fff;    
+}
+/* ========= Footer ============= */
+.footer {
+    background-color: #129CF3;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 3px solid #129CF3;
+}
+#copyright {
+    width: 50%;
+}
+#copyright p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+#copyright p a {
+    text-decoration: none;
+    color: #fff;
+
+
