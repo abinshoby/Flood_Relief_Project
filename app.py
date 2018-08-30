@@ -69,6 +69,37 @@ def upload_complete():
     return render_template(
         'main.html')  # abin shoby change your search python code so that it ll able to search for the input name and return
 
+@app.route('/setreq', methods=['POST'])
+def setreq():
+
+    data=[]
+    data.append(request.form['items'])
+
+    data.append( request.form['quantity'])
+
+    data.append( request.form['campName'])
+
+    data.append(request.form['district'])
+
+    data.append(request.form['userName'])
+
+    #variable = tot_req1["dataArr"]
+    print(data)
+    if(data[0]==""or data[1]==""or data[2]==""or data[3]==""or data[4]==""):
+        return '201'
+    else:
+        f = open("../data/requirements.csv", "a")
+        # print(details[3].replace('\r',"").replace('\n',","))
+        f.write("\n" + data[0].strip() + "\t" + data[3].strip().replace('\r', "").replace('\n', ",") + "\t" +
+                data[2].strip().replace('\r', "").replace('\n', ",") + "\t" + data[
+                    1].strip())  # additional message removed
+        f.close()
+        return '200'
+    return '201'
+@app.route('/request')
+def reqt():
+    return render_template(
+        'require.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

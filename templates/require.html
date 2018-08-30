@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Requirements</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="/static/styles.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		$(document).ready(function(){
+			$('#submitBtn').click(function(){
+				$('#form_submit_result').html('<img src="https://www.dundalkleisurecraft.com/wp-content/uploads/2018/01/loading-1.gif"/><span id="initDivCont">Please Wait...</span>');
+				$('#form_submit_result').css({"visibility":"visible"});
+				$("#form_submit_result").fadeIn(200);
+				console.log('btn clicked');
+				$('#submitBtn').val('Please wait...');
+				<!--var data = [];-->
+				<!--data[0] = $('#items').val();-->
+				<!--data[1] = $('#quantity').val();-->
+				<!--data[2] = $('#campName').val();-->
+				<!--data[3] = $('#district').val();-->
+				<!--data[4] = $('#userName').val();-->
+				$.ajax({
+					url: '/setreq',
+					type: 'POST',
+					data: $('form').serialize(),
+					success: function(result){
+						if(result == '200'){
+							$('#form_submit_result').html('<span class="message" id="success">Successfully Submited</span>');
+							console.log('success');
+						}
+						else{
+							$('#form_submit_result').html('<span class="message" id="error">Couldn\'t Submit The Form please fill all details</span>');
+							console.log('Failed');
+						}
+					},
+					error: function(){
+						$('#form_submit_result').html('<span class="message" id="error">Server Connection Failed</span>');
+						console.log('no net conn');
+					}
+				});
+				$('#submitBtn').val('Confirm');
+				$('#form_submit_result').fadeOut(4500);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4 col-12 col-md-2 col-lg-4"></div>
+			<div class="col-sm-4 col-12 col-md-8 col-lg-4">
+				<form action="return false;" method="post" id="formNeeds" name="formNeeds">
+					<h3>Requirements</h3>
+					<input required type="text" id="items" name="items" placeholder="Items Needed" class="form-control">
+					<input required type="text" id="quantity" name="quantity" placeholder="Quantity" class="form-control">
+					<input required type="text" id="campName" name="campName" placeholder="Camp Name" class="form-control">
+					<select required class="form-control" id="district" name="district">
+  						<option required value="" selected disabled hidden>District</option>
+//
+                    <option value="Alappuzha">Alappuzha</option>
+                     <option value="Ernakulam">	Ernakulam</option>
+                      <option value="Idukki">Idukki</option>
+                       <option value="Kannur">Kannur</option>
+                        <option value="Kasaragod">	Kasaragod</option>
+                         <option value="Kollam">Kollam</option>
+                          <option value="Kottayam">Kottayam</option>
+                           <option value="Kozhikode">Kozhikode</option>
+                            <option value="Malappuram">Malappuram</option>
+                             <option value="Palakkad">Palakkad</option>
+                              <option value="Pathanamthitta">	Pathanamthitta</option>
+                               <option value="Thiruvananthapuram">	Thiruvananthapuram</option>
+                                <option value="Thrissur">Thrissur</option>
+                                 <option value="Wayanad">Wayanad</option>
+					</select>
+					<input required type="text" id="userName" name="userName" placeholder="Name" class="form-control">
+					<input type="button" value="Confirm" class="btn" id="submitBtn">
+				</form>
+				<div class="row" id="form_submit_result">
+					<img src="https://www.dundalkleisurecraft.com/wp-content/uploads/2018/01/loading-1.gif"/>
+					<span id="initDivCont">Please Wait...</span>
+				</div>
+			</div>
+			<div class="col-sm-4 col-12 col-md-2 col-lg-4"></div>
+		</div>
+	</div>
+</body>
+</html>
